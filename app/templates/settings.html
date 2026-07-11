@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 class="text-3xl font-bold mb-8 text-[#00ffcc]">⚙️ إعدادات النظام</h1>
+
+<div class="bg-[#161b22] p-8 rounded-2xl border border-gray-700">
+    <h2 class="text-xl mb-6 font-bold">إعدادات الحساب</h2>
+    <div class="flex items-center justify-between border-b border-gray-800 py-4">
+        <span>تغيير كلمة المرور</span>
+        <button class="bg-gray-700 px-4 py-2 rounded">تعديل</button>
+    </div>
+    <div class="flex items-center justify-between py-4">
+        <span>الوضع الليلي</span>
+        <input type="checkbox" checked class="w-6 h-6">
+    </div>
+</div>
+
+<!-- زر تسجيل الخروج داخل صفحة الإعدادات -->
+<div class="mt-10">
+    <a href="/logout" class="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-xl font-bold">
+        🚪 تسجيل الخروج من النظام
+    </a>
+</div>
+{% endblock %}

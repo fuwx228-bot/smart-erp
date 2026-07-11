@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="p-6">
+    <h1 class="text-2xl font-bold text-white mb-6">مركز الشكاوى</h1>
+
+    <div class="bg-[#161b22] p-6 rounded-2xl border border-[#30363d] mb-8">
+        <form action="{{ url_for('add_complaint') }}" method="POST">
+            <textarea name="complaint_text" placeholder="اكتب شكواك هنا..." class="w-full bg-black p-4 rounded-xl border border-gray-700 text-white mb-4" required></textarea>
+            <button type="submit" class="bg-[#00ffcc] text-black font-bold px-6 py-3 rounded-xl hover:bg-[#00ccaa]">إرسال الشكوى</button>
+        </form>
+    </div>
+
+    <div class="bg-[#161b22] p-6 rounded-2xl border border-[#30363d]">
+        <table class="w-full text-right text-gray-300">
+            <thead>
+                <tr class="border-b border-gray-700">
+                    <th class="p-3">نص الشكوى</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for c in complaints %}
+                <tr class="border-b border-gray-700">
+                    <td class="p-3">{{ c.content }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
